@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Create div Element Dynamically</title>
+    <style type="text/css">
+        .dynamicDiv {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #c0c0c0;
+            background-color: #e1e1e1;
+            font-size: 11px;
+            font-family: verdana;
+            color: #000;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p align="center">
+        <b>Click button</b>
+        <input type="button" id="btn1" value="Create div" onclick="createDiv();">
+    </p>
+
+    <script type="text/javascript">
+        function createDiv() {
+            const divTag = document.createElement("div");
+            const uniqueId = "dynamicDiv" + Date.now(); // Generate unique ID
+            divTag.id = uniqueId;
+            divTag.setAttribute("align", "center");
+            divTag.style.margin = "0px auto";
+            divTag.className = "dynamicDiv";
+            divTag.innerHTML = "This HTML div tag created using JavaScript DOM dynamically";
+            document.body.appendChild(divTag);
+        }
+    </script>
+</body>
+</html>
